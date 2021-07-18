@@ -16,8 +16,7 @@ certbot --nginx -d yourwebsite.com -d www.yourwebsite.com
 ```
 - set up certbot for automatic renewals by running `crontab -e` and adding the following: `0 12 * * * /usr/bin/certbot renew --quiet`
 
-
-- brotli will have to be compiled against the version of nginx being used, to create the module plugin, which can be symlinked to e.g. `/etc/nginx/modules`, and enabled in the nginx config
+-set up ufw to manage your ports:
 ```
 apt install ufw
 ufw allow 80
@@ -26,6 +25,9 @@ ufw allow 443
 ufw allow 22 
 ufw enable
 ```
+
+- brotli will have to be compiled against the version of nginx being used, to create the module plugin, which can be symlinked to e.g. `/etc/nginx/modules`, and enabled in the nginx config
+
 
 ```
 nginx -v
@@ -43,14 +45,16 @@ make && make install
 make modules
 cp objs/*.so /usr/lib/nginx/modules/
 ```
+
 ```
 cd ..
 git clone https://github.com/jeromescuggs/nginx-config
 cd nginx-config
 ```
-## \~*open up nginx/nginx.conf, tweak as needed*\~
+- open up nginx/nginx.conf, tweak as needed
 
-## \~*edit nginx/sites-avaliable/becausethenet.conf*\~
+- edit nginx/sites-avaliable/becausethenet.conf
+
 - copy it to a new file, edit it, do whatever. 
 
 ```
