@@ -9,6 +9,14 @@ nginx configuration tweaked to make the best of every modern browser capability
 
 ## notes
 - brotli will have to be compiled against the version of nginx being used, to create the module plugin, which can be symlinked to e.g. `/etc/nginx/modules`, and enabled in the nginx config
+```
+apt install ufw
+ufw allow 80
+ufw allow 8080
+ufw allow 443
+ufw allow 22 
+ufw enable
+```
 
 ```
 nginx -v
@@ -22,8 +30,10 @@ tar -xvf nginx-1.21.1.tar.gz
 git clone https://github.com/google/ngx_brotli
 cd nginx-1.21.1
 ./configure --add-module=../ngx_brotli
+make && make install
 make modules
 cp objs/*.so /usr/lib/nginx/modules/
 nginx -t
-systemctl restart nginx 
+systemctl enable nginx 
+systemctl start nginx
 ```
