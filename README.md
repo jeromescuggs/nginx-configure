@@ -39,9 +39,9 @@ cd ..
 git clone https://github.com/jeromescuggs/nginx-config
 cd nginx-config
 ```
-## ~*open up nginx/nginx.conf, tweak as needed*~
+## \~*open up nginx/nginx.conf, tweak as needed*\~
 
-## ~*edit nginx/sites-avaliable/becausethenet.conf*~
+## \~*edit nginx/sites-avaliable/becausethenet.conf*\~
 - copy it to a new file, edit it, do whatever. 
 
 ```
