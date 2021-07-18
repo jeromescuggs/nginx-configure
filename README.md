@@ -8,6 +8,15 @@ nginx configuration tweaked to make the best of every modern browser capability
 - header security defaults that make the dev console stop bleeding security warnings 
 
 ## notes
+
+- the defaults assume that you will be generating an SSL certificate using `certbot`. you will need python as well:
+```
+apt install certbot python3 python3-certbot-nginx
+certbot --nginx -d yourwebsite.com -d www.yourwebsite.com
+```
+- set up certbot for automatic renewals by running `crontab -e` and adding the following: `0 12 * * * /usr/bin/certbot renew --quiet`
+
+
 - brotli will have to be compiled against the version of nginx being used, to create the module plugin, which can be symlinked to e.g. `/etc/nginx/modules`, and enabled in the nginx config
 ```
 apt install ufw
