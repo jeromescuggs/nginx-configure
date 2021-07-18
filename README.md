@@ -33,6 +33,26 @@ cd nginx-1.21.1
 make && make install
 make modules
 cp objs/*.so /usr/lib/nginx/modules/
+```
+```
+cd ..
+git clone https://github.com/jeromescuggs/nginx-config
+cd nginx-config
+```
+## ~*open up nginx/nginx.conf, tweak as needed*~
+
+## ~*edit nginx/sites-avaliable/becausethenet.conf*~
+- copy it to a new file, edit it, do whatever. 
+
+```
+cp -r nginx /etc/nginx
+```
+- to 'enable' the site:
+  ```
+  cd /etc/nginx
+  cp sites-available/yourwebsite.conf sites-enabled/
+  ```
+```
 nginx -t
 systemctl enable nginx 
 systemctl start nginx
