@@ -2,7 +2,7 @@
 
 nginx configuration tweaked to make the best of every modern browser capability
 - http/2
-- brotli*
+- brotli* to really supercharge your compression, hand in hand with gzip
 - TLS 1.3, 1.2
 - *cache all the things!*
 - header security defaults that make the dev console stop bleeding security warnings 
